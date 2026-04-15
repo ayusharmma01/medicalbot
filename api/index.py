@@ -141,6 +141,11 @@ def chat():
     if not user_question:
         return jsonify({"answer": "Please enter a valid question."}), 400
 
+    if not OPENROUTER_API_KEY or not PINECONE_API_KEY:
+        return jsonify({
+            "answer": "⚠️ Configuration Error: The API keys are missing. If you have deployed this to Vercel, you must go to your Vercel Project Settings → Environment Variables and add `OPENROUTER_API_KEY` and `PINECONE_API_KEY` there. Keys cannot be securely read from GitHub."
+        }), 500
+
     try:
         # --- Step A: Embed the user's question via API ---
         query_vector = embed_text(user_question)
