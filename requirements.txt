@@ -1,0 +1,19 @@
+# ==============================================================================
+# Python Dependencies — requirements.txt
+# ==============================================================================
+# Lightweight version for Vercel serverless deployment.
+# Heavy ML libs (sentence-transformers, torch) are NOT needed because
+# embeddings are generated via the OpenRouter API.
+# ==============================================================================
+
+# --- Web Framework ---
+flask==3.1.0
+
+# --- Vector Database ---
+pinecone-client==5.0.1
+
+# --- HTTP Requests (for OpenRouter API calls) ---
+requests==2.32.3
+
+# --- Environment Variables ---
+python-dotenv==1.0.1

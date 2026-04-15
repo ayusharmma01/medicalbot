@@ -1,0 +1,24 @@
+# Environment variables (contains API keys — NEVER commit)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Model cache
+.cache/
+.vercel
